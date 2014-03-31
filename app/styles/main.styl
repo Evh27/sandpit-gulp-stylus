@@ -93,3 +93,22 @@ column()
   
   .responsive-panel
     width: (100% / 3)
+
+
+wrapper-fixed($site-width = 1280px)
+  width: $site-width
+  margin: 0 auto
+  transition: margin 0.3s ease-out
+
+.responsive-row-fixed
+  wrapper-fixed(320px)
+
+@media breakpoint
+
+  .responsive-row-fixed
+    wrapper-fixed(728px)
+
+@media screen and (min-width: 1024px)
+
+  .responsive-row-fixed
+    wrapper-fixed(1004px)

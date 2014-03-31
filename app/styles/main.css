@@ -130,3 +130,29 @@ body {
     margin-right: 0%;
   }
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.responsive-row {
+  margin-left: 15%;
+  margin-right: 15%;
+  -webkit-transition: margin 0.3s ease-out;
+  -moz-transition: margin 0.3s ease-out;
+  -o-transition: margin 0.3s ease-out;
+  -ms-transition: margin 0.3s ease-out;
+  transition: margin 0.3s ease-out;
+}
+.responsive-panel {
+  display: inline;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .responsive-panel {
+    width: 33.333333333333336%;
+  }
+}

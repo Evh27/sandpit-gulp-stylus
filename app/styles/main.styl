@@ -1,12 +1,18 @@
 @require '../bower_components/semantic-grid/stylesheets/styl/grid.styl'
+@require '../bower_components/jeet/stylus/jeet/index.styl'
+
+space = 20px
+breakpoint = 'screen and (min-width: 768px)'
 
 body
-  padding-top: 20px
-  padding-bottom: 20px
+  padding: space 0
+  margin: 0
+
+.space-out
+  margin-bottom: space
 
 .table-row
   display: table
-  margin-bottom: 20px
 
 .table-col
   display: table-cell
@@ -18,17 +24,33 @@ body
     width: 20px
     background: none
 
-.rwd-row
+
+.semanticgs-row
   row(12)
 
-.rwd-panel
+.semanticgs-panel
   column(12)
   margin: 20px
   background-color: #ccc
 
-@media screen and (min-width: 768px)
+@media breakpoint
 
-  .rwd-panel
+  .semanticgs-panel
     column(4)
 
+
+.jeet-row
+  center()
+
+.jeet-panel
+  col()
+
+  > h1
+    text-align: center
+    //border: 1px solid #ccc
+
+@media breakpoint
+  
+  .jeet-panel
+    col(1/3)
 

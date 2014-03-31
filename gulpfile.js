@@ -8,6 +8,16 @@ var wiredep = require('wiredep').stream;
 var $ = require('gulp-load-plugins')();
 
 
+// Styles
+gulp.task('styles', function() {
+  return gulp.src('app/styles/main.styl')
+    .pipe($.stylus({use: ['nib'], import: ['nib']}))
+    .on('error', function(err) {
+      console.log("\nStylus Error:\n", err.stack);
+    })
+    .pipe(gulp.dest('app/styles'));
+});
+
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
@@ -45,7 +55,7 @@ gulp.task('clean', function () {
 gulp.task('bundle', ['scripts'], $.bundle('./app/*.html'));
 
 // Build
-gulp.task('build', ['html', 'bundle', 'images']);
+gulp.task('build', ['html', 'styles', 'bundle', 'images']);
 
 // Default task
 gulp.task('default', ['clean'], function () {
@@ -81,7 +91,7 @@ gulp.task('watch', ['connect'], function () {
     // Watch for changes in `app` folder
     gulp.watch([
         'app/*.html',
-        
+        'app/styles/**/*.styl',
         'app/scripts/**/*.js',
         'app/images/**/*'
     ], function(event) {
@@ -89,6 +99,9 @@ gulp.task('watch', ['connect'], function () {
             .pipe($.connect.reload());
     });
     
+
+    // Watch stylus files
+    gulp.watch('app/styles/**/*.styl', ['styles']);
 
     // Watch .js files
     gulp.watch('app/scripts/**/*.js', ['scripts']);

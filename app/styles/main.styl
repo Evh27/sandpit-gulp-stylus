@@ -1,0 +1,34 @@
+@require '../bower_components/semantic-grid/stylesheets/styl/grid.styl'
+
+body
+  padding-top: 20px
+  padding-bottom: 20px
+
+.table-row
+  display: table
+  margin-bottom: 20px
+
+.table-col
+  display: table-cell
+  background-color: #ccc
+  margin: 1em
+  padding: 1em
+
+  &.divider
+    width: 20px
+    background: none
+
+.rwd-row
+  row(12)
+
+.rwd-panel
+  column(12)
+  margin: 20px
+  background-color: #ccc
+
+@media screen and (min-width: 768px)
+
+  .rwd-panel
+    column(4)
+
+

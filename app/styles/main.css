@@ -1,13 +1,12 @@
 body {
   width: 100%;
-  *zoom: 1;
 }
-body:before,
-body:after {
+body *zoom:1:before,
+body *zoom:1:after {
   content: "";
   display: table;
 }
-body:after {
+body *zoom:1:after {
   clear: both;
 }
 .semanticgs-panel,
@@ -51,10 +50,10 @@ body {
 }
 .semanticgs-row {
   display: block;
-  width: 979.9999999999999px;
-  margin: 0 -10px;
-  *width: 979.9999999999999px -correction;
-  *margin: 0 -10px -correction;
+  width: 102.08333333333333%;
+  margin: 0 -1.0416666666666665%;
+  *width: 102.08333333333333% -correction;
+  *margin: 0 -1.0416666666666665% -correction;
 }
 .semanticgs-panel {
   float: left;
@@ -145,6 +144,16 @@ body {
   -ms-transition: margin 0.3s ease-out;
   transition: margin 0.3s ease-out;
 }
+.responsive-row:before,
+.responsive-row:after {
+  content: " ";
+/* 1 */
+  display: table;
+/* 2 */
+}
+.responsive-row:after {
+  clear: both;
+}
 .responsive-panel {
   display: inline;
   float: left;
@@ -166,25 +175,23 @@ body {
   -ms-transition: margin 0.3s ease-out;
   transition: margin 0.3s ease-out;
 }
+.responsive-row-fixed:before,
+.responsive-row-fixed:after {
+  content: " ";
+/* 1 */
+  display: table;
+/* 2 */
+}
+.responsive-row-fixed:after {
+  clear: both;
+}
 @media screen and (min-width: 768px) {
   .responsive-row-fixed {
     width: 728px;
-    margin: 0 auto;
-    -webkit-transition: margin 0.3s ease-out;
-    -moz-transition: margin 0.3s ease-out;
-    -o-transition: margin 0.3s ease-out;
-    -ms-transition: margin 0.3s ease-out;
-    transition: margin 0.3s ease-out;
   }
 }
 @media screen and (min-width: 1024px) {
   .responsive-row-fixed {
     width: 1004px;
-    margin: 0 auto;
-    -webkit-transition: margin 0.3s ease-out;
-    -moz-transition: margin 0.3s ease-out;
-    -o-transition: margin 0.3s ease-out;
-    -ms-transition: margin 0.3s ease-out;
-    transition: margin 0.3s ease-out;
   }
 }

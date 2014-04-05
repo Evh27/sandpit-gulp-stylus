@@ -112,3 +112,19 @@ gulp.task('watch', ['connect'], function () {
     // Watch bower files
     gulp.watch('app/bower_components/*', ['wiredep']);
 });
+
+gulp.task('sync1', function() {
+  console.log('sync1'); 
+});
+
+var sync2Fn = function() {
+  console.log('sync2');
+}
+
+gulp.task('sync2-dep', ['sync1'], sync2Fn);
+
+gulp.task('sync2-nodep', sync2Fn)
+
+gulp.task('sync-dep', ['sync2-dep', 'sync1']);
+
+gulp.task('sync-nodep', ['sync2-nodep', 'sync1']);
